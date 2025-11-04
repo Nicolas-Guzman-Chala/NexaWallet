@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="801.0" style="-fx-background-color: #13131B; -fx-text-fill: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.nexawallet.controllers.InformacionCuentaController">
+    <children>
+        <Pane layoutX="-6.0" prefHeight="472.0" prefWidth="212.0" style="-fx-background-color: #333243; -fx-background-radius: 12;">
+            <children>
+                <ImageView fitHeight="60.0" fitWidth="54.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/NexaWallet_logo-removebg-preview.png" />
+                    </image>
+                </ImageView>
+                <Pane fx:id="BtnInicio" layoutX="15.0" layoutY="287.0" onMouseClicked="#onChangeInicio" opacity="0.22" prefHeight="46.0" prefWidth="183.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12;">
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <effect>
+                        <Glow level="1.0">
+                            <input>
+                                <MotionBlur radius="0.0">
+                                    <input>
+                                        <MotionBlur angle="70.34" radius="19.41" />
+                                    </input>
+                                </MotionBlur>
+                            </input></Glow>
+                    </effect>
+                </Pane>
+                <Label layoutX="68.0" layoutY="27.0" text="NexaWallet" textFill="WHITE">
+                    <font>
+                        <Font name="Poppins SemiBold" size="20.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="23.0" fitWidth="22.0" layoutX="30.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/icono-pantalla.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="BtnInicio2" layoutX="59.0" layoutY="101.0" onMouseClicked="#onChangeInicio" text="Inicio" textFill="#ffffffbc">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="23.0" fitWidth="22.0" layoutX="30.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/icono-transaccion.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="27.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/retirar-logo.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="30.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/icono-cerrar-sesion.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="BtnTransaccion" layoutX="59.0" layoutY="151.0" onMouseClicked="#onCangeTransaccion" text="Transferencia" textFill="#ffffffbb">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="BtnRetirar2" layoutX="59.0" layoutY="198.0" onMouseClicked="#onChangeRetirar" text="Retirar" textFill="#ffffffba">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="BtnCerrarSesion" layoutX="58.0" layoutY="347.0" onMouseClicked="#onCerrarSesion" text="Cerrar Sesión" textFill="#ffffffbb">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="BtnDepositar" layoutX="59.0" layoutY="246.0" onMouseClicked="#onChangeDepositar" prefHeight="23.0" prefWidth="92.0" text="Depositar" textFill="#ffffffbb">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="BtnDetalles" layoutX="59.0" layoutY="298.0" onMouseClicked="#onChangeDetalle" prefHeight="23.0" prefWidth="134.0" text="Detalles Cuenta" textFill="WHITE">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="27.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/depositar.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="27.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/user-logo.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Label layoutX="232.0" layoutY="25.0" text="Detalles Cuenta" textFill="WHITE">
+            <font>
+                <Font name="Poppins SemiBold" size="24.0" />
+            </font>
+        </Label>
+        <TextField fx:id="InputNombres" layoutX="232.0" layoutY="76.0" prefHeight="35.0" prefWidth="165.0" promptText="Nombres" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+            <font>
+                <Font name="Poppins Regular" size="12.0" />
+            </font>
+        </TextField>
+        <Button fx:id="BtnActualizar" layoutX="356.0" layoutY="357.0" mnemonicParsing="false" onAction="#onActualizar" prefHeight="28.0" prefWidth="283.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Actualizar" textFill="WHITE">
+            <font>
+                <Font name="Poppins Regular" size="16.0" />
+            </font>
+        </Button>
+      <TextField fx:id="InputApellidos" layoutX="232.0" layoutY="124.0" prefHeight="35.0" prefWidth="165.0" promptText="Apellidos" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="InputCedula" layoutX="231.0" layoutY="173.0" prefHeight="35.0" prefWidth="165.0" promptText="Cédula" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="InputNumero" layoutX="232.0" layoutY="219.0" prefHeight="35.0" prefWidth="165.0" promptText="Número" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="InputCorreo" layoutX="231.0" layoutY="264.0" prefHeight="35.0" prefWidth="165.0" promptText="Correo" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </TextField>
+      <Label fx:id="TxtNombres" layoutX="413.0" layoutY="82.0" prefHeight="23.0" prefWidth="134.0" text="Nombres" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="TxtApellidos" layoutX="413.0" layoutY="130.0" prefHeight="23.0" prefWidth="134.0" text="Apellidos" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="TxtCedula" layoutX="413.0" layoutY="179.0" prefHeight="23.0" prefWidth="134.0" text="Cédula" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="TxtNumero" layoutX="413.0" layoutY="225.0" prefHeight="23.0" prefWidth="134.0" text="Número" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="TxtCorreo" layoutX="413.0" layoutY="270.0" prefHeight="23.0" prefWidth="134.0" text="Correo" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+      <Line endX="-48.0" endY="182.0" layoutX="638.0" layoutY="114.0" startX="-48.0" startY="-29.0" stroke="#d884db">
+         <effect>
+            <MotionBlur />
+         </effect>
+      </Line>
+      <Line endX="-48.0" endY="182.0" layoutX="638.0" layoutY="114.0" startX="-48.0" startY="-29.0" stroke="#a48975" />
+      <ImageView fx:id="ImgRango" fitHeight="77.0" fitWidth="92.0" layoutX="655.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="613.0" layoutY="132.0" text="Rango: " textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="TxtRango" layoutX="677.0" layoutY="132.0" text="Bronce" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="613.0" layoutY="165.0" text="Puntos:" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="TxtPuntos" layoutX="677.0" layoutY="164.0" text="100" textFill="#3fdaa9">
+         <font>
+            <Font name="Poppins Regular" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="BtnCanjear" layoutX="616.0" layoutY="205.0" mnemonicParsing="false" onAction="#onChangeCanjear" prefHeight="28.0" prefWidth="148.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Canjear" textFill="WHITE">
+         <font>
+            <Font name="Poppins Regular" size="16.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

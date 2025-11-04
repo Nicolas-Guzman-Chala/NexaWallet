@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.nexawallet.controllers.RegistroController">
+
+    <children>
+        <ImageView fitHeight="483.0" fitWidth="776.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true" style="-fx-smooth: 100;">
+            <image>
+                <Image url="@imgs/Fondo Login NexaW.png" />
+            </image>
+        </ImageView>
+        <Pane layoutX="-21.0" prefHeight="460.0" prefWidth="336.0" style="-fx-background-radius: 20; -fx-background-color: #333243;">
+            <children>
+                <Label layoutX="46.0" layoutY="99.0" text="¡Bienvenido" textFill="#c54fd7">
+                    <font>
+                        <Font name="Poppins Regular" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="46.0" layoutY="134.0" text="a NexaWallet!" textFill="WHITE">
+                    <font>
+                        <Font name="Poppins Regular" size="24.0" />
+                    </font>
+                </Label>
+                <Line endX="158.0" layoutX="145.0" layoutY="198.0" startX="-100.0" stroke="#8e2b9d" strokeLineJoin="ROUND" />
+                <Line endX="158.0" layoutX="145.0" layoutY="198.0" opacity="0.25" startX="-100.0" stroke="#9e8484" strokeLineJoin="ROUND" strokeWidth="3.0" style="-fx-effect: 20;" />
+                <Label layoutX="69.0" layoutY="213.0" text="Crea tu cueta para empezar" textFill="WHITE">
+                    <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="99.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/NexaWallet_logo-removebg-preview.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane layoutX="315.0" prefHeight="460.0" prefWidth="458.0">
+            <children>
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="147.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/user-logo.png" />
+                    </image>
+                </ImageView>
+                <Circle fill="#1f93ff03" layoutX="222.0" layoutY="84.0" radius="49.0" stroke="#e649b2" strokeType="OUTSIDE" strokeWidth="2.0" />
+                <TextField fx:id="TxtEmail" layoutX="87.0" layoutY="218.0" prefHeight="35.0" prefWidth="284.0" promptText="Correo Electrónico" style="-fx-background-color: transparent; -fx-border-color: #5057ED; -fx-border-radius: 12;">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </TextField>
+                <PasswordField fx:id="TxtContrasena" layoutX="87.0" layoutY="276.0" prefHeight="35.0" prefWidth="284.0" promptText="Contraseña" style="-fx-background-color: transparent; -fx-border-radius: 12; -fx-border-color: #5057ED;">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </PasswordField>
+                <Button fx:id="BtnRegistrarse" layoutX="87.0" layoutY="329.0" mnemonicParsing="false" onAction="#onAgregarCliente" prefHeight="45.0" prefWidth="284.0" style="-fx-background-radius: 12; -fx-background-color: #AA65FF;" text="Registrarse" textFill="WHITE">
+                    <font>
+                        <Font name="Poppins SemiBold" size="20.0" />
+                    </font>
+                </Button>
+                <Label layoutX="97.0" layoutY="402.0" text="¿Ya tienes cuenta?" textFill="WHITE">
+                    <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="TxtNombre" layoutX="87.0" layoutY="159.0" prefHeight="35.0" prefWidth="284.0" promptText="Nombre" style="-fx-background-color: transparent; -fx-border-color: #5057ED; -fx-border-radius: 12;">
+                    <font>
+                        <Font name="Poppins Regular" size="14.0" />
+                    </font>
+                </TextField>
+            <Button fx:id="BtnIniciarSesion" layoutX="222.0" layoutY="398.0" mnemonicParsing="false" onAction="#onChangeRegistro" style="-fx-background-color: transparent;" text="Iniciar Sesion" textFill="#de69ff">
+               <font>
+                  <Font name="Poppins Regular" size="12.0" />
+               </font>
+            </Button>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
