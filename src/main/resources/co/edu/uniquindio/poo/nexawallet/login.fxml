@@ -63,7 +63,7 @@
                   <Font name="Poppins Regular" size="14.0" />
                </font>
             </PasswordField>
-            <Button fx:id="BtnIniciarSesion" layoutX="87.0" layoutY="329.0" mnemonicParsing="false" onAction="#onIniciarSesion" prefHeight="45.0" prefWidth="284.0" style="-fx-background-radius: 12; -fx-background-color: #AA65FF;" text="Iniciar Sesión" textFill="WHITE">
+            <Button fx:id="BtnIniciarSesion" layoutX="87.0" layoutY="329.0" mnemonicParsing="false" onAction="#onIniciarSesion" prefHeight="45.0" prefWidth="284.0" stylesheets="@values/buttons.css" text="Iniciar Sesión" textFill="WHITE">
                <font>
                   <Font name="Poppins SemiBold" size="20.0" />
                </font>

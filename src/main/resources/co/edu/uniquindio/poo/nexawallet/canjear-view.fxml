@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="801.0" style="-fx-background-color: #13131B; -fx-text-fill: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.nexawallet.controllers.CanjearController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="801.0" style="-fx-background-color: #13131B; -fx-text-fill: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.nexawallet.controllers.CanjearController">
    <children>
       <Pane layoutX="-6.0" prefHeight="472.0" prefWidth="212.0" style="-fx-background-color: #333243; -fx-background-radius: 12;">
          <children>
@@ -131,7 +135,7 @@
                   <Font name="Poppins SemiBold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="BtnCanjear1" layoutX="16.0" layoutY="151.0" mnemonicParsing="false" onAction="#onCanjear1" prefHeight="35.0" prefWidth="117.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Canjear" textFill="WHITE">
+            <Button id="button" fx:id="BtnCanjear1" layoutX="16.0" layoutY="151.0" mnemonicParsing="false" onAction="#onCanjear1" prefHeight="35.0" prefWidth="117.0" stylesheets="@values/buttons.css" text="Canjear" textFill="WHITE">
                <font>
                   <Font name="Poppins Regular" size="16.0" />
                </font>
@@ -166,7 +170,7 @@
                   <Font name="Poppins SemiBold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="BtnCanjear2" layoutX="17.0" layoutY="151.0" mnemonicParsing="false" onAction="#onCanjear2" prefHeight="35.0" prefWidth="117.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Canjear" textFill="WHITE">
+            <Button fx:id="BtnCanjear2" layoutX="17.0" layoutY="151.0" mnemonicParsing="false" onAction="#onCanjear2" prefHeight="35.0" prefWidth="117.0" stylesheets="@values/buttons.css" text="Canjear" textFill="WHITE">
                <font>
                   <Font name="Poppins Regular" size="16.0" />
                </font>
@@ -206,7 +210,7 @@
                   <Font name="Poppins SemiBold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="BtnCanjear3" layoutX="17.0" layoutY="151.0" mnemonicParsing="false" onAction="#onCanjear3" prefHeight="35.0" prefWidth="117.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Canjear" textFill="WHITE">
+            <Button fx:id="BtnCanjear3" layoutX="17.0" layoutY="151.0" mnemonicParsing="false" onAction="#onCanjear3" prefHeight="35.0" prefWidth="117.0" stylesheets="@values/buttons.css" text="Canjear" textFill="WHITE">
                <font>
                   <Font name="Poppins Regular" size="16.0" />
                </font>

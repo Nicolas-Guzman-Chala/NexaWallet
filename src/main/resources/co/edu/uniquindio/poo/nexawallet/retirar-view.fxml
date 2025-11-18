@@ -108,12 +108,12 @@
             <Font name="Poppins SemiBold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="BtnRetirar" layoutX="358.0" layoutY="188.0" mnemonicParsing="false" onAction="#onRetirar" prefHeight="30.0" prefWidth="251.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12;" text="Retirar" textFill="WHITE">
+      <Button fx:id="BtnRetirar" layoutX="358.0" layoutY="241.0" mnemonicParsing="false" onAction="#onRetirar" prefHeight="30.0" prefWidth="251.0" stylesheets="@values/buttons.css" text="Retirar" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="14.0" />
          </font>
       </Button>
-      <TextField fx:id="TxtMonto" layoutX="358.0" layoutY="118.0" prefHeight="35.0" prefWidth="251.0" promptText="Monto" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12; -fx-text-fill: #ffffff;">
+      <TextField fx:id="TxtMonto" layoutX="358.0" layoutY="171.0" prefHeight="35.0" prefWidth="251.0" promptText="Monto" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12; -fx-text-fill: #ffffff;">
          <font>
             <Font name="Poppins Regular" size="12.0" />
          </font>

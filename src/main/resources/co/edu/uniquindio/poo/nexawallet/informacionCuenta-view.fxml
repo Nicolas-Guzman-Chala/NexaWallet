@@ -109,32 +109,32 @@
                 <Font name="Poppins SemiBold" size="24.0" />
             </font>
         </Label>
-        <TextField fx:id="InputNombres" layoutX="232.0" layoutY="76.0" prefHeight="35.0" prefWidth="165.0" promptText="Nombres" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+        <TextField fx:id="InputNombres" layoutX="232.0" layoutY="76.0" prefHeight="35.0" prefWidth="165.0" promptText="Nombres" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12; -fx-text-fill: #fff;">
             <font>
                 <Font name="Poppins Regular" size="12.0" />
             </font>
         </TextField>
-        <Button fx:id="BtnActualizar" layoutX="356.0" layoutY="357.0" mnemonicParsing="false" onAction="#onActualizar" prefHeight="28.0" prefWidth="283.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Actualizar" textFill="WHITE">
+        <Button fx:id="BtnActualizar" layoutX="356.0" layoutY="357.0" mnemonicParsing="false" onAction="#onActualizar" prefHeight="28.0" prefWidth="283.0" stylesheets="@values/buttons.css" text="Actualizar" textFill="WHITE">
             <font>
                 <Font name="Poppins Regular" size="16.0" />
             </font>
         </Button>
-      <TextField fx:id="InputApellidos" layoutX="232.0" layoutY="124.0" prefHeight="35.0" prefWidth="165.0" promptText="Apellidos" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+      <TextField fx:id="InputApellidos" layoutX="232.0" layoutY="124.0" prefHeight="35.0" prefWidth="165.0" promptText="Apellidos" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12; -fx-text-fill: #fff;">
          <font>
             <Font name="Poppins Regular" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="InputCedula" layoutX="231.0" layoutY="173.0" prefHeight="35.0" prefWidth="165.0" promptText="Cédula" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+      <TextField fx:id="InputCedula" layoutX="231.0" layoutY="173.0" prefHeight="35.0" prefWidth="165.0" promptText="Cédula" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12; -fx-text-fill: #fff;">
          <font>
             <Font name="Poppins Regular" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="InputNumero" layoutX="232.0" layoutY="219.0" prefHeight="35.0" prefWidth="165.0" promptText="Número" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+      <TextField fx:id="InputNumero" layoutX="232.0" layoutY="219.0" prefHeight="35.0" prefWidth="165.0" promptText="Número" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12; -fx-text-fill: #fff;">
          <font>
             <Font name="Poppins Regular" size="12.0" />
          </font>
       </TextField>
-      <TextField fx:id="InputCorreo" layoutX="231.0" layoutY="264.0" prefHeight="35.0" prefWidth="165.0" promptText="Correo" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+      <TextField fx:id="InputCorreo" layoutX="231.0" layoutY="264.0" prefHeight="35.0" prefWidth="165.0" promptText="Correo" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12; -fx-text-fill: #fff;">
          <font>
             <Font name="Poppins Regular" size="12.0" />
          </font>
@@ -191,7 +191,7 @@
             <Font name="Poppins Regular" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="BtnCanjear" layoutX="616.0" layoutY="205.0" mnemonicParsing="false" onAction="#onChangeCanjear" prefHeight="28.0" prefWidth="148.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Canjear" textFill="WHITE">
+      <Button fx:id="BtnCanjear" layoutX="616.0" layoutY="205.0" mnemonicParsing="false" onAction="#onChangeCanjear" prefHeight="28.0" prefWidth="148.0" stylesheets="@values/buttons.css" text="Canjear" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="16.0" />
          </font>

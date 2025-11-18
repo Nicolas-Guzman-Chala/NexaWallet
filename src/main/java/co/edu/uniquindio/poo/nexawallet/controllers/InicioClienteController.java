@@ -168,11 +168,6 @@ public class InicioClienteController {
     }
 
     @FXML
-    void onChangeDepositar1(MouseEvent event) {
-        NexaWAplication.changeScene("depositar-view.fxml");
-    }
-
-    @FXML
     void onChangeDepositar(MouseEvent event) {
         NexaWAplication.changeScene("depositar-view.fxml");
     }
@@ -195,11 +190,6 @@ public class InicioClienteController {
     @FXML
     void onChangeDepositar1(ActionEvent event) {
         NexaWAplication.changeScene("depositar-view.fxml");
-    }
-
-    @FXML
-    void onChangeTransferir(MouseEvent event) {
-        NexaWAplication.changeScene("transaccion-view.fxml");
     }
     @FXML
     void onChangeInicio(MouseEvent event){

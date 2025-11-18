@@ -182,17 +182,17 @@
             <Font name="Poppins SemiBold" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="BtnRetirarMain" layoutX="239.0" layoutY="175.0" mnemonicParsing="false" onAction="#onChangeRetirar" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Retirar" textFill="WHITE">
+      <Button fx:id="BtnRetirarMain" layoutX="239.0" layoutY="175.0" mnemonicParsing="false" onAction="#onChangeRetirar" prefHeight="35.0" prefWidth="92.0" stylesheets="@values/buttons.css" text="Retirar" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="BtnDepositarMain" layoutX="345.0" layoutY="175.0" mnemonicParsing="false" onAction="#onChangeDepositar1" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Depositar" textFill="WHITE">
+      <Button fx:id="BtnDepositarMain" layoutX="345.0" layoutY="175.0" mnemonicParsing="false" onAction="#onChangeDepositar1" stylesheets="@values/buttons.css" text="Depositar" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="BtnTransferirMain" layoutX="458.0" layoutY="175.0" mnemonicParsing="false" onAction="#onChangeTransferir" style="-fx-background-color: #AA65FF; -fx-background-radius: 12; -fx-border-radius: 12; -fx-border-color: #EC5BF4;" text="Transferir" textFill="WHITE">
+      <Button fx:id="BtnTransferirMain" layoutX="458.0" layoutY="175.0" mnemonicParsing="false" onAction="#onChangeTransferir" stylesheets="@values/buttons.css" text="Transferir" textFill="WHITE">
          <font>
             <Font name="Poppins Regular" size="16.0" />
          </font>

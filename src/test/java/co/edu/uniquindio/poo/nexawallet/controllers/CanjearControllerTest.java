@@ -13,26 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CanjearControllerTest {
 
-    @Test
-    void cambiarPuntos() {
-    }
-
-    @Test
-    void rebajar() {
-    }
-
-    @Test
-    void validarPlatino() {
-    }
-
-    @Test
-    void onCanjear2() {
-    }
-
-    @Test
-    void onCanjear3() {
-    }
-
     private CanjearController controller;
     private Cliente cliente;
 
