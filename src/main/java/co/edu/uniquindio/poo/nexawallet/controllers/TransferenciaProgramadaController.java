@@ -8,7 +8,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.time.*;
+import java.util.Optional;
+import java.util.concurrent.ScheduledExecutorService;
+
 public class TransferenciaProgramadaController {
+
+    @FXML
+    public DatePicker DateFechaDeEnvio;
 
     @FXML
     private Label BtnCerrarSesion;
@@ -47,7 +54,7 @@ public class TransferenciaProgramadaController {
     private TextField TxtFechaInicial;
 
     @FXML
-    private TextField TxtMonto;
+    public TextField TxtMonto;
 
     @FXML
     void onCangeTransaccion(MouseEvent event) {
@@ -86,8 +93,74 @@ public class TransferenciaProgramadaController {
 
     @FXML
     void onEnviar(ActionEvent event) {
+        int monto = Integer.parseInt(TxtMonto.getText());
 
+        if(buscarCliente().isPresent()){
+            Optional<Cliente> cliente = buscarCliente();
+            Cliente clienteExistente = cliente.get();
+                clienteExistente.setSaldo(clienteExistente.getSaldo() + monto);
+                if(monto < NexaWAplication.getClienteActual().getSaldo()){
+
+                    LocalDateTime fechaProgramada = DateFechaDeEnvio.getValue().atStartOfDay();
+                    LocalDateTime ahora = LocalDateTime.now();
+
+                    if (fechaProgramada.isBefore(ahora)) {
+                        mostrarAlerta("Error", "La fecha debe ser en el futuro");
+                        return;
+                    }
+
+                    long delay = Duration.between(ahora, fechaProgramada).getSeconds();
+
+                    mostrarAlerta("Éxito", "Tu transferencia ha sido programada para: " + fechaProgramada);
+
+                    ScheduledExecutorService scheduler = java.util.concurrent.Executors.newSingleThreadScheduledExecutor();
+
+                    scheduler.schedule(() -> {
+                        javafx.application.Platform.runLater(() -> {
+
+                            clienteExistente.setSaldo(clienteExistente.getSaldo() + monto);
+                            NexaWAplication.getClienteActual().setSaldo(
+                                    NexaWAplication.getClienteActual().getSaldo() - monto
+                            );
+
+
+                            HistorialTransaccion historial = new HistorialTransaccion(
+                                    NexaWAplication.getClienteActual(),
+                                    TipoTransaccion.TRASFERENCIAPROGRAMADA,
+                                    NexaWAplication.getClienteActual().getPuntos(),
+                                    NexaWAplication.getClienteActual().getTipoRango() + "",
+                                    monto,
+                                    fechaProgramada
+                            );
+
+                            NexaWAplication.getClienteActual().setHistorialTransaccion(historial);
+                            InicioClienteController.setListaObservable(historial);
+
+                            System.out.println("✔ Transferencia programada ejecutada");
+
+                        });
+
+                    }, delay, java.util.concurrent.TimeUnit.SECONDS);
+
+                    mostrarAlerta("Éxito", "Se ha programado tu transaccion");
+                    String tipoRango = NexaWAplication.getClienteActual().getTipoRango() + "";
+                    HistorialTransaccion historialTransaccion = new HistorialTransaccion(NexaWAplication.getClienteActual(), TipoTransaccion.TRASFERENCIAPROGRAMADA, NexaWAplication.getClienteActual().getPuntos(), tipoRango, monto, DateFechaDeEnvio.getValue().atStartOfDay());
+                    NexaWAplication.getClienteActual().setHistorialTransaccion(historialTransaccion);
+                    InicioClienteController.setListaObservable(historialTransaccion);
+                }else{
+                    mostrarAlerta("Error", "La transferencia no puede ser mayor a tu saldo");
+                    throw new IllegalArgumentException("La transferencia no puede ser mayor a tu saldo");
+                }
+        }else{
+            mostrarAlerta("Error", "El celular al cual desea transferir \n no se encuentra registrado");
+        }
     }
-
+private void mostrarAlerta(String titulo, String mensaje) {
+    Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+    alerta.setTitle(titulo);
+    alerta.setHeaderText(null);
+    alerta.setContentText(mensaje);
+    alerta.showAndWait();
+}
 }
 

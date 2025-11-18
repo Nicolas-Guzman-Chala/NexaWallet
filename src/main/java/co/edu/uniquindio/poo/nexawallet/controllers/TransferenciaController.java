@@ -1,6 +1,9 @@
 package co.edu.uniquindio.poo.nexawallet.controllers;
 import co.edu.uniquindio.poo.nexawallet.NexaWAplication;
 import co.edu.uniquindio.poo.nexawallet.clases.Cliente;
+import co.edu.uniquindio.poo.nexawallet.clases.HistorialTransaccion;
+import co.edu.uniquindio.poo.nexawallet.clases.TipoRango;
+import co.edu.uniquindio.poo.nexawallet.clases.TipoTransaccion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -10,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class TransferenciaController {
@@ -42,10 +46,10 @@ public class TransferenciaController {
         private Label TxtInicio;
 
         @FXML
-        private TextField InputCelular;
+        public TextField InputCelular;
 
         @FXML
-        private TextField InputMonto;
+        public TextField InputMonto;
 
         @FXML
         void onCangeTransaccion(MouseEvent event) {
@@ -102,6 +106,10 @@ public class TransferenciaController {
                         NexaWAplication.getClienteActual().setDescuento(0);
                         InputCelular.clear();
                         InputMonto.clear();
+                        String tipoRango = NexaWAplication.getClienteActual().getTipoRango() + "";
+                        HistorialTransaccion historialTransaccion = new HistorialTransaccion(NexaWAplication.getClienteActual(), TipoTransaccion.TRANSFERENCIA, NexaWAplication.getClienteActual().getPuntos(), tipoRango, monto, LocalDateTime.now());
+                        NexaWAplication.getClienteActual().setHistorialTransaccion(historialTransaccion);
+                        InicioClienteController.setListaObservable(historialTransaccion);
                         mostrarAlerta("Éxito", "Se transferido con éxito");
                     }else{
                         mostrarAlerta("Error", "La transferencia no puede ser mayor a tu saldo");
@@ -129,6 +137,5 @@ public class TransferenciaController {
         void onProgramar(ActionEvent event) {
             NexaWAplication.changeScene("transaccionProgramada-view.fxml");
         }
-
     }
 

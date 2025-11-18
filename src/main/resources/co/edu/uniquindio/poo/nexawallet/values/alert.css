@@ -1,0 +1,45 @@
+/* Contenedor principal del Alert */
+.custom-alert {
+    -fx-background-color: rgba(25, 25, 25, 0.9);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+    -fx-border-radius: 15;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 20, 0.25, 0, 4);
+}
+
+/* Título (HeaderText) */
+.custom-alert .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Contenido del cuerpo */
+.custom-alert .content.label {
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 14px;
+}
+
+/* Botones */
+.custom-alert .button-bar .button {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+}
+
+.custom-alert .button-bar .button:hover {
+    -fx-background-color: rgba(255,255,255,0.20);
+}
+
+.custom-alert .button-bar .button:pressed {
+    -fx-background-color: rgba(255,255,255,0.25);
+}
+
+.custom-alert .graphic-container .label,
+.custom-alert .graphic-container .image-view {
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.35), 10, 0.25, 0, 0);
+}

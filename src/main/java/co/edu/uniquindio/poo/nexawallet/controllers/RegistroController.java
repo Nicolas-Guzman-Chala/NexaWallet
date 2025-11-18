@@ -5,6 +5,7 @@ import co.edu.uniquindio.poo.nexawallet.clases.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -15,13 +16,13 @@ import java.util.Optional;
 public class RegistroController {
 
     @FXML
-    private TextField TxtNombre;
+    public TextField TxtNombre;
 
     @FXML
-    private TextField TxtEmail;
+    public TextField TxtEmail;
 
     @FXML
-    private PasswordField TxtContrasena;
+    public PasswordField TxtContrasena;
 
     private static List<ClienteRegistro> listaClientesRegistro = new LinkedList<>();
 

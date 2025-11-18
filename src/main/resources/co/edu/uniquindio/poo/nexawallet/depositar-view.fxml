@@ -108,7 +108,7 @@
             <Font name="Poppins SemiBold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="TxtMonto" layoutX="352.0" layoutY="120.0" prefHeight="35.0" prefWidth="283.0" promptText="Monto" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12;">
+      <TextField fx:id="TxtMonto" layoutX="352.0" layoutY="120.0" prefHeight="35.0" prefWidth="283.0" promptText="Monto" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-radius: 12; -fx-text-fill: #ffffff;">
          <font>
             <Font name="Poppins Regular" size="12.0" />
          </font>

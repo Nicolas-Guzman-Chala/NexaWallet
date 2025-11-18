@@ -1,5 +1,8 @@
 package co.edu.uniquindio.poo.nexawallet.clases;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Cliente{
     private String nombres;
     private String apellidos;
@@ -10,8 +13,11 @@ public class Cliente{
     private int puntos;
     private ClienteRegistro clienteRegistro;
     private double descuento;
+    private double cargos;
+    private TipoRango tipoRango;
+    private List<HistorialTransaccion> historialTransaccion;
 
-    public Cliente(String nombres, String apellidos, String cedula, String numero, String correo, double saldo, int puntos, ClienteRegistro clienteRegistro, double descuento) {
+    public Cliente(String nombres, String apellidos, String cedula, String numero, String correo, double saldo, int puntos, ClienteRegistro clienteRegistro, double descuento, double cargos, TipoRango tipoRango) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.cedula = cedula;
@@ -21,6 +27,25 @@ public class Cliente{
         this.puntos = puntos;
         this.clienteRegistro = clienteRegistro;
         this.descuento = descuento;
+        this.cargos = cargos;
+        this.tipoRango = tipoRango;
+        this.historialTransaccion = new LinkedList<>();
+    }
+
+    public List<HistorialTransaccion> getHistorialTransaccion() {
+        return historialTransaccion;
+    }
+
+    public void setHistorialTransaccion(HistorialTransaccion t) {
+        historialTransaccion.add(t);
+    }
+
+    public TipoRango getTipoRango() {
+        return tipoRango;
+    }
+
+    public void setTipoRango(TipoRango tipoRango) {
+        this.tipoRango = tipoRango;
     }
 
     public ClienteRegistro getClienteRegistro() {
@@ -94,4 +119,14 @@ public class Cliente{
     public void setDescuento(double descuento) {
         this.descuento = descuento;
     }
+
+    public double getCargos() {
+        return cargos;
+    }
+
+    public void setCargos(double cargos) {
+        this.cargos = cargos;
+    }
+
+
 }

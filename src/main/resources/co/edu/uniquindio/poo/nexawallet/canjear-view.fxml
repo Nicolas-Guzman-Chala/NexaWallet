@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.effect.MotionBlur?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="801.0" style="-fx-background-color: #13131B; -fx-text-fill: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.nexawallet.controllers.CanjearController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="801.0" style="-fx-background-color: #13131B; -fx-text-fill: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.nexawallet.controllers.CanjearController">
    <children>
       <Pane layoutX="-6.0" prefHeight="472.0" prefWidth="212.0" style="-fx-background-color: #333243; -fx-background-radius: 12;">
          <children>
@@ -130,7 +126,7 @@
                   <Font name="Poppins Regular" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="75.0" layoutY="115.0" text="100" textFill="#50fcc3">
+            <Label fx:id="TxtCosto1" layoutX="75.0" layoutY="115.0" text="100" textFill="#50fcc3">
                <font>
                   <Font name="Poppins SemiBold" size="14.0" />
                </font>
@@ -145,7 +141,7 @@
       </Pane>
       <Pane layoutX="429.0" layoutY="66.0" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: #ffffff; -fx-border-radius: 12;">
          <children>
-            <Label layoutX="48.0" layoutY="14.0" text="Enviar" textFill="WHITE">
+            <Label layoutX="48.0" layoutY="14.0" text="Un" textFill="WHITE">
                <font>
                   <Font name="Poppins Regular" size="18.0" />
                </font>
@@ -155,7 +151,7 @@
                   <Font name="Poppins Regular" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="41.0" text="a un Número" textFill="WHITE">
+            <Label layoutX="38.0" layoutY="41.0" text="Mes sin" textFill="WHITE">
                <font>
                   <Font name="Poppins Regular" size="18.0" />
                </font>
@@ -165,7 +161,7 @@
                   <Font name="Poppins Regular" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="75.0" layoutY="115.0" text="500" textFill="#50fcc3">
+            <Label fx:id="TxtCosto2" layoutX="75.0" layoutY="115.0" text="500" textFill="#50fcc3">
                <font>
                   <Font name="Poppins SemiBold" size="14.0" />
                </font>
@@ -176,7 +172,7 @@
                </font>
             </Button>
             <Line endX="115.0" layoutX="32.0" layoutY="106.0" startX="-29.0" stroke="#f8f8f8" />
-            <Label layoutX="52.0" layoutY="68.0" text="5000" textFill="WHITE">
+            <Label layoutX="42.0" layoutY="68.0" text="Cargos" textFill="WHITE">
                <font>
                   <Font name="Poppins Regular" size="18.0" />
                </font>
@@ -185,7 +181,7 @@
       </Pane>
       <Pane layoutX="610.0" layoutY="66.0" prefHeight="200.0" prefWidth="150.0" style="-fx-border-color: #ffffff; -fx-border-radius: 12;">
          <children>
-            <Label layoutX="50.0" layoutY="14.0" text="10000" textFill="WHITE">
+            <Label layoutX="50.0" layoutY="14.0" text="1000" textFill="WHITE">
                <font>
                   <Font name="Poppins Regular" size="18.0" />
                </font>
@@ -205,7 +201,7 @@
                   <Font name="Poppins Regular" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="75.0" layoutY="115.0" text="1000" textFill="#50fcc3">
+            <Label fx:id="TxtCosto3" layoutX="75.0" layoutY="115.0" text="1000" textFill="#50fcc3">
                <font>
                   <Font name="Poppins SemiBold" size="14.0" />
                </font>

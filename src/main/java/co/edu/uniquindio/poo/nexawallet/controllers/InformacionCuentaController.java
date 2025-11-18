@@ -46,37 +46,37 @@ public class InformacionCuentaController {
     private ImageView ImgRango;
 
     @FXML
-    private TextField InputApellidos;
+    public TextField InputApellidos;
 
     @FXML
-    private TextField InputCedula;
+    public TextField InputCedula;
 
     @FXML
-    private TextField InputCorreo;
+    public TextField InputCorreo;
 
     @FXML
-    private TextField InputNombres;
+    public TextField InputNombres;
 
     @FXML
-    private TextField InputNumero;
+    public TextField InputNumero;
 
     @FXML
-    private Label TxtApellidos;
+    public Label TxtApellidos;
 
     @FXML
-    private Label TxtCedula;
+    public Label TxtCedula;
 
     @FXML
-    private Label TxtCorreo;
+    public Label TxtCorreo;
 
     @FXML
-    private Label TxtNombres;
+    public Label TxtNombres;
 
     @FXML
-    private Label TxtNumero;
+    public Label TxtNumero;
 
     @FXML
-    private Label TxtPuntos;
+    public Label TxtPuntos;
 
     @FXML
     private Label TxtRango;

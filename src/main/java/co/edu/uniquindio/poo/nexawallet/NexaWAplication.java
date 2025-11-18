@@ -14,10 +14,17 @@ public class NexaWAplication extends Application {
     private static Cliente clienteActual;
     private static List<ClienteRegistro> listaClienteRegistro = new LinkedList<>();
     private static ClienteRegistro clienteRegistro;
+    public static Notificar notificar;
 
     @Override
     public void start(Stage stage) throws Exception {
         mainStage = stage;
+
+        notificar = new Notificar(
+                "https://8klr93.api.infobip.com",
+                "de104b84b5593e15e8f3b46f8847dd1a-fe445105-45e1-42a8-8048-db449a61dc3b"
+        );
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("register.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setTitle("NexaWallet");
@@ -76,7 +83,9 @@ public class NexaWAplication extends Application {
                 0.0,
                 0,
                 clienteRegistro,
-                0
+                0,
+                100,
+                TipoRango.BRONCE
         );
 
         listaClientes.add(cliente);
@@ -88,6 +97,19 @@ public class NexaWAplication extends Application {
         System.out.println("Cliente guardado: " + cliente.getNombres());
     }
 
+    public static void enviarNotificacion(String mensaje) {
+        try {
+            String respuesta = notificar.enviarSms(
+                    getClienteActual().getNumero(),
+                    mensaje
+            );
+
+            System.out.println("Respuesta Infobip: " + respuesta);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
         launch(args);

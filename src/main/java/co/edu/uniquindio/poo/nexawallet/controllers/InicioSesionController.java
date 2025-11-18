@@ -4,7 +4,6 @@ package co.edu.uniquindio.poo.nexawallet.controllers;
 
 import co.edu.uniquindio.poo.nexawallet.NexaWAplication;
 import co.edu.uniquindio.poo.nexawallet.clases.*;
-import co.edu.uniquindio.poo.nexawallet.controllers.RegistroController;
 
 
 import javafx.event.ActionEvent;
@@ -15,10 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 
 public class InicioSesionController {
@@ -30,10 +26,10 @@ public class InicioSesionController {
         private Label BtnRegistrateAqui;
 
         @FXML
-        private PasswordField TxtContrasena;
+        public PasswordField TxtContrasena;
 
         @FXML
-        private TextField TxtEmail;
+        public TextField TxtEmail;
 
         @FXML
         void onChangeRegistrate(MouseEvent event) {

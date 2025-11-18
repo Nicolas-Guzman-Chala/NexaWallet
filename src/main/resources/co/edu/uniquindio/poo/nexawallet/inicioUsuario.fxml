@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" fx:controller="co.edu.uniquindio.poo.nexawallet.controllers.InicioClienteController" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="801.0" style="-fx-background-color: #13131B; -fx-text-fill: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="801.0" style="-fx-background-color: #13131B; -fx-text-fill: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.nexawallet.controllers.InicioClienteController">
    <children>
       <Pane layoutX="-6.0" prefHeight="472.0" prefWidth="212.0" style="-fx-background-color: #333243; -fx-background-radius: 12;">
          <children>
@@ -145,6 +145,7 @@
                   <Font name="Poppins SemiBold" size="21.0" />
                </font>
             </Label>
+            <ImageView fx:id="imageView" fitHeight="46.0" fitWidth="46.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
          </children></Pane>
       <Label layoutX="253.0" layoutY="250.0" text="Transacciones Recientes" textFill="WHITE">
          <font>
@@ -196,16 +197,13 @@
             <Font name="Poppins Regular" size="16.0" />
          </font>
       </Button>
-      <TableView layoutX="245.0" fx:id="tablaTransacciones" layoutY="286.0" prefHeight="178.0" prefWidth="479.0" style="-fx-background-color: transparent;
-    -fx-border-color: #ffffffad;
-    -fx-border-width: 0 0 2px 0;
-    -fx-text-fill: #ffffff;">
+      <TableView fx:id="tablaTransacciones" layoutX="245.0" layoutY="286.0" prefHeight="178.0" prefWidth="479.0" style="-fx-background-color: transparent; -fx-border-color: #ffffffad; -fx-border-width: 0 0 2px 0; -fx-text-fill: #ffffff; -fx-fill: #ffffff;" stylesheets="@values/table.css">
         <columns>
-          <TableColumn prefWidth="123.0" style="-fx-background-color: #13131B;" text="Tipo de Transacción" />
-          <TableColumn prefWidth="73.0" style="-fx-background-color: #13131B;" text="Puntos" />
-            <TableColumn prefWidth="75.0" style="-fx-background-color: #13131B;" text="Rango" />
-            <TableColumn prefWidth="92.0" style="-fx-background-color: #13131B;" text="Cantidad" />
-            <TableColumn prefWidth="112.0" style="-fx-background-color: #13131B;" text="Fecha" />
+          <TableColumn fx:id="colTipo" prefWidth="131.0" style="-fx-background-color: #13131B; -fx-text-fill: #ffffff; -fx-fill: #ffffff;" text="Tipo de Transacción" />
+          <TableColumn fx:id="colPuntos" prefWidth="67.0" style="-fx-background-color: #13131B;" text="Puntos" />
+            <TableColumn fx:id="colTipoRango" prefWidth="75.0" style="-fx-background-color: #13131B;" text="Rango" />
+            <TableColumn fx:id="colCantidad" prefWidth="92.0" style="-fx-background-color: #13131B;" text="Cantidad" />
+            <TableColumn fx:id="colFecha" prefWidth="112.0" style="-fx-background-color: #13131B;" text="Fecha" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

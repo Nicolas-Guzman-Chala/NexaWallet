@@ -1,6 +1,10 @@
 package co.edu.uniquindio.poo.nexawallet.controllers;
 
 import co.edu.uniquindio.poo.nexawallet.NexaWAplication;
+import co.edu.uniquindio.poo.nexawallet.clases.HistorialTransaccion;
+import co.edu.uniquindio.poo.nexawallet.clases.Notificable;
+import co.edu.uniquindio.poo.nexawallet.clases.TipoRango;
+import co.edu.uniquindio.poo.nexawallet.clases.TipoTransaccion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -10,7 +14,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
-public class RetirarController {
+import java.time.LocalDateTime;
+
+public class RetirarController implements Notificable {
 
     @FXML
     private Label BtnCerrarSesion;
@@ -37,7 +43,7 @@ public class RetirarController {
     private Label BtnTransaccion;
 
     @FXML
-    private TextField TxtMonto;
+    public TextField TxtMonto;
 
     @FXML
     void onCangeTransaccion(MouseEvent event) {
@@ -84,7 +90,26 @@ public class RetirarController {
             NexaWAplication.getClienteActual().setSaldo(NexaWAplication.getClienteActual().getSaldo() - monto);
             mostrarAlerta("Éxito", "El Saldo se ha cambiado exitósamente");
             TxtMonto.clear();
+            String tipoRango = NexaWAplication.getClienteActual().getTipoRango() + "";
+            HistorialTransaccion historialTransaccion = new HistorialTransaccion(NexaWAplication.getClienteActual(), TipoTransaccion.RETIRO, NexaWAplication.getClienteActual().getPuntos(), tipoRango, monto, LocalDateTime.now());
+            NexaWAplication.getClienteActual().setHistorialTransaccion(historialTransaccion);
+            InicioClienteController.setListaObservable(historialTransaccion);
         }
+        notificar();
+    }
+
+    boolean validarOro(){
+        TipoRango tipoRango = NexaWAplication.getClienteActual().getTipoRango();
+        if(tipoRango == TipoRango.ORO){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public void notificar() {
+        NexaWAplication.enviarNotificacion("Haz retirado " + TxtMonto.getText() + " tu saldo está ahora en $ " + NexaWAplication.getClienteActual().getSaldo());
     }
 
     private void mostrarAlerta(String titulo, String mensaje) {
@@ -94,6 +119,5 @@ public class RetirarController {
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }
-
 }
 

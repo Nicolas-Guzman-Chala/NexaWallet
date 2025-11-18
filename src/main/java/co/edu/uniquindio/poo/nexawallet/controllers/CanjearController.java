@@ -13,6 +13,9 @@ import javafx.scene.layout.Pane;
 public class CanjearController {
 
     @FXML
+    private Label TxtCosto1, TxtCosto2, TxtCosto3;
+
+    @FXML
     private Button BtnCanjear1;
 
     @FXML
@@ -47,7 +50,7 @@ public class CanjearController {
 
     @FXML
     public void initialize(){
-        cambiarPuntos();
+        cambiarPuntos(); rebajar();
     }
 
     void cambiarPuntos(){
@@ -63,10 +66,35 @@ public class CanjearController {
     @FXML
     void onCanjear1(ActionEvent event) {
         int puntos = NexaWAplication.getClienteActual().getPuntos();
-        if(puntos >= 100){
+        if(puntos >= 50 && validarPlatino()){
+            NexaWAplication.getClienteActual().setPuntos(puntos - 50);
+            NexaWAplication.getClienteActual().setDescuento(NexaWAplication.getClienteActual().getDescuento() + 10);
+            NexaWAplication.changeScene("canjear-view.fxml");
+        }else if(puntos >= 100){
             NexaWAplication.getClienteActual().setPuntos(puntos - 100);
             NexaWAplication.getClienteActual().setDescuento(10);
             NexaWAplication.changeScene("canjear-view.fxml");
+        }
+    }
+
+    void rebajar(){
+        if(validarPlatino()){
+            TxtCosto1.setText("50");
+            TxtCosto2.setText("250");
+            TxtCosto3.setText("500");
+        }else{
+            TxtCosto1.setText("100");
+            TxtCosto2.setText("500");
+            TxtCosto3.setText("1000");
+        }
+    }
+
+    boolean validarPlatino(){
+        TipoRango tipoRango = NexaWAplication.getClienteActual().getTipoRango();
+        if(tipoRango == TipoRango.PLATINO){
+            return true;
+        }else{
+            return false;
         }
     }
 
