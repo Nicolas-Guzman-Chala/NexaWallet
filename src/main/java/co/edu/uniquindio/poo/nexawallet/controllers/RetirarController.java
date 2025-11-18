@@ -83,11 +83,18 @@ public class RetirarController implements Notificable {
             throw new IllegalArgumentException("El retiro no puede superar el saldo actual");
         }else{
             if(monto >= 100){
-                int cantidadPuntos = (int) monto / 100;
-                NexaWAplication.getClienteActual().setPuntos(NexaWAplication.getClienteActual().getPuntos() + (cantidadPuntos*2));
-                System.out.println(NexaWAplication.getClienteActual().getPuntos());
+                if(validarOro()){
+                    int cantidadPuntos = (int) monto / 100;
+                    NexaWAplication.getClienteActual().setPuntos(NexaWAplication.getClienteActual().getPuntos() + (cantidadPuntos*4));
+                    System.out.println(NexaWAplication.getClienteActual().getPuntos());
+                }else {
+                    int cantidadPuntos = (int) monto / 100;
+                    NexaWAplication.getClienteActual().setPuntos(NexaWAplication.getClienteActual().getPuntos() + (cantidadPuntos * 2));
+                    System.out.println(NexaWAplication.getClienteActual().getPuntos());
+                }
+
             }
-            NexaWAplication.getClienteActual().setSaldo(NexaWAplication.getClienteActual().getSaldo() - monto);
+            NexaWAplication.getClienteActual().setSaldo(NexaWAplication.getClienteActual().getSaldo() - (monto + NexaWAplication.getClienteActual().getCargos()));
             mostrarAlerta("Éxito", "El Saldo se ha cambiado exitósamente");
             TxtMonto.clear();
             String tipoRango = NexaWAplication.getClienteActual().getTipoRango() + "";

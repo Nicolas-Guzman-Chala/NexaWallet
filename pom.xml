@@ -75,7 +75,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                co.edu.uniquindio.poo.nexawallet/co.edu.uniquindio.poo.nexawallet.NexaWAplication
+                                co.edu.uniquindio.poo.nexawallet/co.edu.uniquindio.poo.nexawallet.NextApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

@@ -1,4 +1,5 @@
 package co.edu.uniquindio.poo.nexawallet.controllers;
+
 import co.edu.uniquindio.poo.nexawallet.NexaWAplication;
 import co.edu.uniquindio.poo.nexawallet.clases.Cliente;
 import co.edu.uniquindio.poo.nexawallet.clases.HistorialTransaccion;
@@ -98,9 +99,15 @@ public class TransferenciaController {
                     clienteExistente.setSaldo(clienteExistente.getSaldo() + monto);
                     if(monto < NexaWAplication.getClienteActual().getSaldo()){
                         if(monto >= 100){
-                            int cantidadPuntos = (int) monto / 100;
-                            NexaWAplication.getClienteActual().setPuntos(NexaWAplication.getClienteActual().getPuntos() + (cantidadPuntos*3));
-                            System.out.println(NexaWAplication.getClienteActual().getPuntos());
+                            if(validarOro()){
+                                int cantidadPuntos = (int) monto / 100;
+                                NexaWAplication.getClienteActual().setPuntos(NexaWAplication.getClienteActual().getPuntos() + (cantidadPuntos*6));
+                                System.out.println(NexaWAplication.getClienteActual().getPuntos());
+                            }else {
+                                int cantidadPuntos = (int) monto / 100;
+                                NexaWAplication.getClienteActual().setPuntos(NexaWAplication.getClienteActual().getPuntos() + (cantidadPuntos * 3));
+                                System.out.println(NexaWAplication.getClienteActual().getPuntos());
+                            }
                         }
                         NexaWAplication.getClienteActual().setSaldo((NexaWAplication.getClienteActual().getSaldo() + (monto * descuento)) - monto);
                         NexaWAplication.getClienteActual().setDescuento(0);
@@ -121,6 +128,15 @@ public class TransferenciaController {
             }
         }
 
+    boolean validarOro(){
+        TipoRango tipoRango = NexaWAplication.getClienteActual().getTipoRango();
+        if(tipoRango == TipoRango.ORO){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     private void mostrarAlerta(String titulo, String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle(titulo);
@@ -129,9 +145,9 @@ public class TransferenciaController {
         alerta.showAndWait();
     }
 
-        public Optional<Cliente> buscarCliente(){
-            return NexaWAplication.getListaClientes().stream().filter(c -> c.getNumero().equals(InputCelular.getText())).findFirst();
-        }
+    public Optional<Cliente> buscarCliente(){
+        return NexaWAplication.getListaClientes().stream().filter(c -> c.getNumero().equals(InputCelular.getText())).findFirst();
+    }
 
         @FXML
         void onProgramar(ActionEvent event) {

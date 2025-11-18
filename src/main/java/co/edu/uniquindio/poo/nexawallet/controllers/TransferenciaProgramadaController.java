@@ -1,11 +1,10 @@
 package co.edu.uniquindio.poo.nexawallet.controllers;
 
 import co.edu.uniquindio.poo.nexawallet.NexaWAplication;
+import co.edu.uniquindio.poo.nexawallet.clases.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 import java.time.*;
@@ -45,13 +44,7 @@ public class TransferenciaProgramadaController {
     private TextField TxtCantidadDias;
 
     @FXML
-    private TextField TxtCelular;
-
-    @FXML
-    private TextField TxtFechaFinal;
-
-    @FXML
-    private TextField TxtFechaInicial;
+    public TextField TxtCelular;
 
     @FXML
     public TextField TxtMonto;
@@ -89,6 +82,18 @@ public class TransferenciaProgramadaController {
     @FXML
     void onChangeTransaccion(ActionEvent event) {
         NexaWAplication.changeScene("transaccion-view.fxml");
+    }
+
+    private void mostrarAlerta(String titulo) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(null);
+        alerta.showAndWait();
+    }
+
+    public Optional<Cliente> buscarCliente(){
+        return NexaWAplication.getListaClientes().stream().filter(c -> c.getNumero().equals(TxtCelular.getText())).findFirst();
     }
 
     @FXML

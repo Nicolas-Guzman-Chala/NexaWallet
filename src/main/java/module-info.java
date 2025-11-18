@@ -3,6 +3,8 @@ module co.edu.uniquindio.poo.nexawallet {
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
+    requires okhttp3;
+    requires java.desktop;
 
     opens co.edu.uniquindio.poo.nexawallet.controllers to javafx.fxml;
     opens co.edu.uniquindio.poo.nexawallet to javafx.fxml;

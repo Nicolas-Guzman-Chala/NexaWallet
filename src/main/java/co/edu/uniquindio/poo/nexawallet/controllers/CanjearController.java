@@ -1,7 +1,7 @@
 package co.edu.uniquindio.poo.nexawallet.controllers;
 
 import co.edu.uniquindio.poo.nexawallet.NexaWAplication;
-import co.edu.uniquindio.poo.nexawallet.clases.*;
+import co.edu.uniquindio.poo.nexawallet.clases.TipoRango;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -108,12 +108,30 @@ public class CanjearController {
 
     @FXML
     void onCanjear2(ActionEvent event) {
-
+        int puntos = NexaWAplication.getClienteActual().getPuntos();
+        if (puntos >= 250 && validarPlatino()){
+            NexaWAplication.getClienteActual().setPuntos(puntos - 250);
+            NexaWAplication.getClienteActual().setCargos(0);
+            NexaWAplication.changeScene("canjear-view.fxml");
+        }else if(puntos >= 500){
+            NexaWAplication.getClienteActual().setPuntos(puntos - 500);
+            NexaWAplication.getClienteActual().setCargos(0);
+            NexaWAplication.changeScene("canjear-view.fxml");
+        }
     }
 
     @FXML
     void onCanjear3(ActionEvent event) {
-
+        int puntos = NexaWAplication.getClienteActual().getPuntos();
+        if (puntos >= 500 && validarPlatino()) {
+            NexaWAplication.getClienteActual().setPuntos(puntos - 500);
+            NexaWAplication.getClienteActual().setSaldo(NexaWAplication.getClienteActual().getSaldo() + 1000);
+            NexaWAplication.changeScene("canjear-view.fxml");
+        }else if(puntos > 1000){
+            NexaWAplication.getClienteActual().setPuntos(puntos - 1000);
+            NexaWAplication.getClienteActual().setSaldo(NexaWAplication.getClienteActual().getSaldo() + 1000);
+            NexaWAplication.changeScene("canjear-view.fxml");
+        }
     }
 
     @FXML
